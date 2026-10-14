@@ -1,0 +1,46 @@
+name: VelaFly
+version: '${version}'
+main: fr.velafly.VelaFlyPlugin
+api-version: '26.2'
+description: Temps de vol avec bons en papier (clic droit pour utiliser).
+commands:
+  fly:
+    description: Active ou coupe votre vol
+    usage: /fly [on|off] [joueur]
+    aliases: [vfly]
+  flytime:
+    description: Affiche votre temps de vol restant
+    usage: /flytime [joueur]
+    aliases: [ftime]
+  velafly:
+    description: Gestion du temps de vol
+    usage: /velafly help
+    aliases: [vf]
+permissions:
+  velafly.use:
+    description: Utiliser /fly
+    default: true
+  velafly.time:
+    description: Voir son temps de vol
+    default: true
+  velafly.time.others:
+    description: Voir le temps de vol des autres
+    default: op
+  velafly.redeem:
+    description: Utiliser un papier de temps de vol (clic droit)
+    default: true
+  velafly.withdraw:
+    description: Transformer son temps de vol en papier
+    default: true
+  velafly.fly.others:
+    description: Activer ou couper le vol d'un autre joueur
+    default: op
+  velafly.unlimited:
+    description: Vol sans limite de temps
+    default: op
+  velafly.bypass.pvp:
+    description: Garder le vol quand on se bat
+    default: false
+  velafly.admin:
+    description: Ajouter, retirer, définir du temps, donner des papiers, recharger
+    default: op

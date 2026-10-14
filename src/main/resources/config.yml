@@ -1,0 +1,69 @@
+# VelaFly - temps de vol
+# Durées : 30m, 1h30m, 2d, 45s, 1w (j = jours aussi). Un nombre seul = minutes.
+
+fly:
+  consume-only-when-flying: true   # le temps ne s'écoule qu'en vol (false = dès que le vol est activé)
+  fall-protection-seconds: 10      # pas de dégâts de chute juste après la fin du vol
+  disable-on-pvp: true             # le vol est coupé quand on frappe ou se fait frapper par un joueur
+  reset-flight-on-join: true       # coupe un vol "resté actif" (crash...) pour les joueurs sans temps de vol
+  disabled-worlds: []              # mondes où le vol est interdit, ex : [world_nether]
+
+limits:
+  max-seconds: 0                   # temps maximum possédé via les papiers (0 = illimité)
+
+# Alertes (secondes restantes)
+warnings: [300, 60, 30, 10, 5, 4, 3, 2, 1]
+
+unlimited-text: "illimité"
+
+actionbar:
+  enabled: true
+  format: "<aqua>✈ Temps de vol : <white><time>"
+  unlimited: "<aqua>✈ Vol <white>illimité"
+
+# Papier de temps de vol : clic droit pour l'utiliser (accroupi = tout le paquet)
+voucher:
+  material: PAPER
+  name: "<gold><bold>Bon de vol <gray>- <yellow><time>"
+  lore:
+    - "<gray>Clic droit pour ajouter"
+    - "<white><time> <gray>de temps de vol."
+    - "<dark_gray>Accroupi : utilise tout le paquet."
+  glow: true
+  auto-enable: false               # active le vol directement après utilisation
+  allow-withdraw: true             # /velafly withdraw : transformer son temps en papier
+  min-seconds: 60                  # durée minimale d'un papier créé par un joueur
+
+messages:
+  prefix: "<aqua>[VelaFly] <reset>"
+  no-permission: "<red>Vous n'avez pas la permission."
+  player-only: "<red>Cette commande est réservée aux joueurs."
+  unknown-player: "<red>Joueur introuvable : <white><player>"
+  invalid-time: "<red>Durée invalide. Exemples : <white>30m<red>, <white>1h30m<red>, <white>2d<red>."
+  fly-enabled: "<green>Vol activé. <gray>Temps restant : <white><time>"
+  fly-disabled: "<yellow>Vol désactivé."
+  fly-toggled-other: "<gray>Vol de <white><player><gray> : <white><state>"
+  creative: "<red>Vous pouvez déjà voler dans ce mode de jeu."
+  no-time: "<red>Vous n'avez plus de temps de vol. <gray>Utilisez un papier de temps de vol (clic droit)."
+  world-disabled: "<red>Le vol est désactivé dans ce monde."
+  time-up: "<red>Votre temps de vol est écoulé."
+  time-warning: "<yellow>Attention : il vous reste <white><time><yellow> de vol !"
+  pvp-disabled: "<red>Le vol est désactivé pendant un combat."
+  time-self: "<gray>Temps de vol restant : <white><time>"
+  time-other: "<gray>Temps de vol de <white><player><gray> : <white><time>"
+  added: "<green>+<white><time><green> de vol pour <white><player><green> (total : <white><total><green>)."
+  removed: "<yellow>-<white><time><yellow> de vol pour <white><player><yellow> (total : <white><total><yellow>)."
+  set: "<green>Temps de vol de <white><player><green> défini à <white><total><green>."
+  voucher-given: "<green><amount> papier(s) de <white><time><green> donné(s) à <white><player><green>."
+  voucher-received: "<green>Vous avez reçu <white><amount><green> papier(s) de vol de <white><time><green>. <gray>Clic droit pour l'utiliser."
+  redeemed: "<green>+<white><time><green> de vol ajoutés (<white><amount><green> papier(s)). <gray>Total : <white><total>"
+  redeem-limit: "<red>Vous ne pouvez pas dépasser <white><max><red> de temps de vol."
+  withdrawn: "<green>Vous avez retiré <white><amount><green> papier(s) de <white><time><green>. <gray>Il vous reste <white><total><gray>."
+  withdraw-min: "<red>Un papier doit contenir au moins <white><min><red>."
+  not-enough-time: "<red>Vous n'avez pas assez de temps de vol. <gray>(<time>)"
+  reloaded: "<green>Configuration rechargée."
+  usage-fly: "<red>Usage : /fly [on|off] [joueur]"
+  usage-adjust: "<red>Usage : /velafly <add|remove|set|check> <joueur> <durée>"
+  usage-voucher: "<red>Usage : /velafly voucher <durée> [nombre] [joueur]"
+  usage-withdraw: "<red>Usage : /velafly withdraw <durée> [nombre]"
+  help: "<aqua><bold>VelaFly<newline><yellow>/fly [on|off] <gray>- active ou coupe le vol<newline><yellow>/flytime [joueur] <gray>- temps restant<newline><yellow>/velafly withdraw <durée> [nombre] <gray>- transforme votre temps en papier<newline><yellow>/velafly add|remove|set <joueur> <durée> <gray>(admin)<newline><yellow>/velafly check <joueur> <gray>(admin)<newline><yellow>/velafly voucher <durée> [nombre] [joueur] <gray>(admin) - donne des papiers<newline><yellow>/velafly reload <gray>(admin)"
